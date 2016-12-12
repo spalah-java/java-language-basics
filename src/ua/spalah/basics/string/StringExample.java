@@ -24,7 +24,7 @@ public class StringExample {
         someString.indexOf("d");
         someString.replace("e", "f");
         someString.split("\\s");
-        someString.substring(0, 10);
+        someString.substring(0, 7);
         someString.trim();
     }
 }

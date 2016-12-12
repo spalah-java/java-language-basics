@@ -12,6 +12,7 @@ public class JavaGroup {
     public JavaGroup(String name, int size) {
         this.name = name;
         this.size = size;
+        System.out.print(this.name + " ");
         checkSize();
     }
 
@@ -34,6 +35,8 @@ public class JavaGroup {
     }
 
     public static void main(String[] args) {
+        new JavaGroup("spalah-java-15/16", 8);
         new JavaGroup("spalah-java-16/17", 14);
+        new JavaGroup("spalah-java-17/18", 10);
     }
 }
