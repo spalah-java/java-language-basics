@@ -16,5 +16,8 @@ public class ArrayExample {
 
         // доступ к элементу массива по индексу
         int zeroElement = array2[0];
+
+
+        String[] strings = {"one", "2", "three", "four"};
     }
 }
