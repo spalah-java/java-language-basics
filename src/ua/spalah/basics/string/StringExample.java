@@ -26,5 +26,8 @@ public class StringExample {
         someString.split("\\s");
         someString.substring(0, 7);
         someString.trim();
+
+        String[] strings = {"one", "2", "three", "four"};
+        String join = String.join("", strings);
     }
 }

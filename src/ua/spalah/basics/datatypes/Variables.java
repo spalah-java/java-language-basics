@@ -13,5 +13,6 @@ public class Variables {
 
         // Для констант используется ключевое слово final
         final double CM_PER_INCH = 2.54;
+//        CM_PER_INCH = 1; // Ошибка нельзе реинициализировать константу
     }
 }
