@@ -5,9 +5,9 @@ import java.time.LocalDate;
 
 public class Worker {
 
-    // fields
-    private String name;
-    private LocalDate birthDay;
+    // fields, public for now
+    public String name;
+    public LocalDate birthDay;
 
     // constructors (overloaded)
     public Worker() {
