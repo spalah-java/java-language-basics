@@ -1,0 +1,15 @@
+2015-08-12 12:43:27: INFO: caught signal 15
+2015-08-12 12:43:27: INFO: racoon process 79910 shutdown
+2015-08-12 12:43:27: INFO: @(#)ipsec-tools 0.8.1 (http://ipsec-tools.sourceforge.net)
+2015-08-12 12:43:27: INFO: @(#)This product linked OpenSSL 0.9.8y 5 Feb 2013 (http://www.openssl.org/)
+2015-08-12 12:43:27: INFO: Reading configuration from "/usr/local/etc/racoon/racoon.conf"
+2015-08-12 12:43:27: INFO: *.*.*.*[500] used for NAT-T
+2015-08-12 12:43:27: INFO: *.*.*.*[500] used as isakmp port (fd=6)
+2015-08-12 12:43:31: INFO: IPsec-SA request for *.*.*.* queued due to no phase1 found.
+2015-08-12 12:43:31: INFO: initiate new phase 1 negotiation: *.*.*.*[500]<=>*.*.*.*[500]
+2015-08-12 12:43:31: INFO: begin Aggressive mode.
+2015-08-12 12:43:31: INFO: received Vendor ID: CISCO-UNITY
+2015-08-12 12:43:31: INFO: received Vendor ID: draft-ietf-ipsra-isakmp-xauth-06.txt
+2015-08-12 12:43:31: INFO: received Vendor ID: DPD
+2015-08-12 12:43:31: INFO: received broken Microsoft ID: FRAGMENTATION
+2015-08-12 12:43:31: WARNING: port 500 expected, but 0
