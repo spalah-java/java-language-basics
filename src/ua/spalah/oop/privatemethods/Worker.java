@@ -42,11 +42,11 @@ public class Worker {
 
     // methods that do something
     public void introduce() {
-        System.out.println("Hello my name is " + name + " and I'm " + getAge() + " years old");
+        System.out.println("Hello my name is " + name + " and I'm " + calculateAge() + " years old");
     }
 
     // private method to use only inside of the class
-    private int getAge() {
+    private int calculateAge() {
         return LocalDate.now().getYear() - birthDay.getYear();
     }
 }
