@@ -10,7 +10,7 @@ public abstract class Pet {
 
     public void walk() {
         System.out.println("Walking a " + name);
-    };
+    }
 
     public String getName() {
         return name;

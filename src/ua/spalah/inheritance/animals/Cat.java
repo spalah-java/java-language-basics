@@ -5,12 +5,12 @@ public class Cat extends Pet {
 
     @Override
     public void walk() {
-        System.out.println(getName() + " doesn't want to go outside");;
+        System.out.println(getName() + " doesn't want to go outside");
     }
 
     @Override
     public void pet() {
-        System.out.println("Coooooool!");
+        System.out.println("Cat gets stroked");
     }
 
     public void meow() {

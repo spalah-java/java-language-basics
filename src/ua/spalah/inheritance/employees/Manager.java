@@ -3,7 +3,7 @@ package ua.spalah.inheritance.employees;
 
 import java.time.LocalDate;
 
-public class Manager extends Employee{
+public class Manager extends Employee {
 
     private double bonus;
 

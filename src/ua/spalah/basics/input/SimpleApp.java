@@ -31,7 +31,7 @@ public class SimpleApp {
         String[] pets = petsInLine.split(" ");
 
         for (int i = 1; i <= pets.length; i++) {
-            System.out.println(i + " " + pets[i -1]);
+            System.out.println(i + " " + pets[i - 1]);
         }
         System.out.println("exit");
     }

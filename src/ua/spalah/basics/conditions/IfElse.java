@@ -32,7 +32,7 @@ public class IfElse {
         // -----------------------------------------------
         if (a > b) {
             System.out.println("a bigger than b");
-        } else if (a == b){
+        } else if (a == b) {
             System.out.println("a equals b");
         } else {
             System.out.println("b bigger than a");
