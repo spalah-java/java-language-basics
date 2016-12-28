@@ -1,10 +1,11 @@
 package ua.spalah.tips;
 
 
-import java.util.ArrayList;
-
-import ua.spalah.inheritance.employees.Employee;
 import ua.spalah.inheritance.animals.Dog;
+import ua.spalah.inheritance.employees.Employee;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ArrayListTips {
 
@@ -49,7 +50,7 @@ public class ArrayListTips {
         System.out.println(dogs.get(2));
 //        System.out.println(dogs.get(3));
 
-        System.out.println("Add with index ------");
+        System.out.println("Remove with index ------");
         dogs.remove(1);
         System.out.println("Size: " + dogs.size());
         System.out.println(dogs);
@@ -64,11 +65,22 @@ public class ArrayListTips {
             System.out.println(dog);
         }
 
-        // toArray()
-        Object[] objects = dogs.toArray();
-        Dog[] dogsAsArray = dogs.toArray(new Dog[0]);
+        toArray(dogs);
     }
 
+    private static void toArray(ArrayList<Dog> dogs) {
+        // toArray()
+        Object[] objects = dogs.toArray();
+
+//        Dog[] copyHere = new Dog[0];
+//        Dog[] copyHere = new Dog[3];
+        Dog[] copyHere = new Dog[dogs.size()];
+        Dog[] dogsAsArray = dogs.toArray(copyHere);
+
+        System.out.println(Arrays.toString(copyHere));
+        System.out.println(Arrays.toString(dogsAsArray));
+        System.out.println(copyHere == dogsAsArray);
+    }
 
     private static Dog createDog(String name, String breed) {
         Dog dog = new Dog();

@@ -6,10 +6,12 @@ public class VarArgsTips {
         double max1 = max(1, 3, 4, 15, -522);
         double max2 = max(81);
         double max3 = max(1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 555, 1, 2, 3, 4, 5, 6, 7, 8);
+        double max4 = max();
 
         System.out.println(max1);
         System.out.println(max2);
         System.out.println(max3);
+        System.out.println(max4);
     }
 
     public static double max(double... values) {
