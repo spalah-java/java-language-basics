@@ -27,6 +27,7 @@ public void addListener(ClientRegistrationListener listener)
 Теперь при каждом добавлении клиента методе addClient должны оповестить всех наблюдателей об этом. (Просто в цикле вызываете метод из интерфейса)
 
 Вам нужно реализовать три класса наблюдателей:
+
 1. PrintClientListener - выводит в консоль информацию о клиенте
 
 2. EmailNotificationListener - отправляет письмо с текстом
