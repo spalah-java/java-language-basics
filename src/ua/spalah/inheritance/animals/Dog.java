@@ -20,19 +20,19 @@ public class Dog extends Pet {
         if (!(obj instanceof Dog)) return false;
         Dog that = (Dog) obj;
 
-        return Objects.equals(getName(), that.getName())
+        return Objects.equals(getNick(), that.getNick())
                 && Objects.equals(getBreed(), that.getBreed());
-//        return getName().equals(that.getName())
+//        return getNick().equals(that.getNick())
 //                && getBreed().equals(that.getBreed());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getBreed());
+        return Objects.hash(getNick(), getBreed());
     }
 
     @Override
     public String toString() {
-        return "Dog [name = " + getName() + ", breed = " + getBreed() + "]";
+        return "Dog [name = " + getNick() + ", breed = " + getBreed() + "]";
     }
 }

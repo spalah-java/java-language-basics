@@ -4,7 +4,7 @@ public class MainEquals {
 
     public static void main(String[] args) {
         Dog dog = new Dog();
-        dog.setName("Laaaaabr");
+        dog.setNick("Laaaaabr");
         dog.setBreed("labrador");
 
         System.out.println("" + dog);
@@ -12,11 +12,11 @@ public class MainEquals {
         Dog tuzik = dog;
 
         Dog tuzikFromDb = new Dog();
-        tuzikFromDb.setName("Laaaaabr");
+        tuzikFromDb.setNick("Laaaaabr");
         tuzikFromDb.setBreed("labrador");
 
         Dog sharik = new Dog();
-        sharik.setName("sharik");
+        sharik.setNick("sharik");
         sharik.setBreed("labrador");
 
         System.out.println(dog == tuzik);

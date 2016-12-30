@@ -80,11 +80,14 @@ public class ArrayListTips {
         System.out.println(Arrays.toString(copyHere));
         System.out.println(Arrays.toString(dogsAsArray));
         System.out.println(copyHere == dogsAsArray);
+
+        Arrays.sort(dogsAsArray);
+        System.out.println(Arrays.toString(dogsAsArray));
     }
 
     private static Dog createDog(String name, String breed) {
         Dog dog = new Dog();
-        dog.setName(name);
+        dog.setNick(name);
         dog.setBreed(breed);
         return dog;
     }

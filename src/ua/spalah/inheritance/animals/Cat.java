@@ -5,7 +5,7 @@ public class Cat extends Pet {
 
     @Override
     public void walk() {
-        System.out.println(getName() + " doesn't want to go outside");
+        System.out.println(getNick() + " doesn't want to go outside");
     }
 
     @Override

@@ -5,12 +5,12 @@ public class MainPolymorphism {
     public static void main(String[] args) {
 
         Dog dog = new Dog();
-        dog.setName("Laaaaabr");
+        dog.setNick("Laaaaabr");
         dog.setBreed("Labrador");
 
 
         Cat tulip = new Cat();
-        tulip.setName("tulip");
+        tulip.setNick("tulip");
         tulip.setBreed("British");
 
         dog.bark();

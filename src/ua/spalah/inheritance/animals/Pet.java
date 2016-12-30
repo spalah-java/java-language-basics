@@ -1,23 +1,26 @@
 package ua.spalah.inheritance.animals;
 
 
-public abstract class Pet {
+import ua.spalah.interfaces.LivingCreature;
 
-    private String name;
+public abstract class Pet implements LivingCreature {
+
+    private String nick;
     private String breed;
+    private int age;
 
     public abstract void pet();
 
     public void walk() {
-        System.out.println("Walking a " + name);
+        System.out.println("Walking a " + nick);
     }
 
-    public String getName() {
-        return name;
+    public String getNick() {
+        return nick;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNick(String nick) {
+        this.nick = nick;
     }
 
     public String getBreed() {
@@ -26,5 +29,19 @@ public abstract class Pet {
 
     public void setBreed(String breed) {
         this.breed = breed;
+    }
+
+    @Override
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String getName() {
+        return nick;
     }
 }
