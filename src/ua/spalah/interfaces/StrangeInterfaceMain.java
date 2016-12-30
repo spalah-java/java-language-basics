@@ -1,13 +1,13 @@
 package ua.spalah.interfaces;
 
-import ua.spalah.inheritance.employees.Employee;
-import ua.spalah.inheritance.employees.Manager;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StrangeInterfaceRunner {
+import ua.spalah.inheritance.employees.Employee;
+import ua.spalah.inheritance.employees.Manager;
+
+public class StrangeInterfaceMain {
 
     public static void main(String[] args) {
         Employee harry1 = new Manager("Harry1", 785, LocalDate.of(2013, 4, 15));

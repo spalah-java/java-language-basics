@@ -1,12 +1,12 @@
 package ua.spalah.interfaces;
 
+import java.time.LocalDate;
+
 import ua.spalah.inheritance.animals.Cat;
 import ua.spalah.inheritance.employees.Employee;
 import ua.spalah.inheritance.employees.Manager;
 
-import java.time.LocalDate;
-
-public class InterfaceRunner {
+public class InterfaceMain {
 
     public static void main(String[] args) {
         Employee harry = new Manager("Harry", 785, LocalDate.of(1980, 4, 15));

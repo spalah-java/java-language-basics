@@ -3,7 +3,7 @@ package ua.spalah.inheritance.animals;
 
 import ua.spalah.interfaces.LivingCreature;
 
-public abstract class Pet implements LivingCreature {
+public abstract class Pet implements LivingCreature, Comparable<Pet> {
 
     private String nick;
     private String breed;
@@ -43,5 +43,10 @@ public abstract class Pet implements LivingCreature {
     @Override
     public String getName() {
         return nick;
+    }
+
+    @Override
+    public int compareTo(Pet o) {
+        return nick != null ? nick.compareTo(o.nick) : -1;
     }
 }
