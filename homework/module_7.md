@@ -41,4 +41,48 @@ public void addListener(ClientRegistrationListener listener)
 
 ### Перенесение функциональной логики в отдельные классы - Сервисы
 
-Эту часть домашки добавлю во вторник
+Как я уже говорил, приложения обычно проектирую отделяя
+1. Классы, которые хранят данные. Они содержат поля, геттеры и сеттеры для них, никакой логики.
+2. Классы, которые обрабатывают данные (манипулируя классами 1го типа). Эти классы обычно имеют состояния (полей), но содержат в себе методы для реализации какой либо фунциональности (сохранение в базу, отправка почты, рассчет чего-нибудь)
+
+Например:
+
+У нас есть класс Dog который соответствует таблице DOG в базе данных (его поля соответствуют колонкам в таблице, то есть один объект, это одна строка в этой таблице).
+Dog - это класс первого типа (поля и методы доступа и установки).
+
+Ну а чтобы сохранить объетк собаки в базу данных мы используем класс DogDao (**DAO** - data access object).
+В этом классе есть методы:
+```java
+public void save(Dog dog)
+
+public Dog findById(long id)
+```
+Первый сохранят собаку в базу второй находит ее по id.
+
+Теперь собственно задание. Вам нужно будет перенести бизнес логику вашего приложения в так называемые сервисы - классы предназначеные для этого.
+
+Вам будет нужно написать три класса реализующие соответствующие интерфейсы, классы называйте как соответствующие интерфейсы с суффиксом Impl (например ClientServiceImpl).
+Никаких модификаций в существующих классах вам по идее производить не нужно (разве что добавить метод deleteClient в класс Bank).
+
+```java
+public interface ClientService {
+    Client findClientByName(Bank bank, String name);
+    List<Client> findAllClients(Bank bank);
+    Client saveClient(Bank bank, Client client);
+    void deleteClient(Bank bank, Client client);
+}
+
+public interface AccountService {
+    void deposit(Account account, double amount);
+    void withdraw(Account account, double amount);
+    void transfer(Account fromAccount, Account toAccount, double amount);
+}
+
+public interface BankReportService {
+    int getNumberOfClients(Bank bank);
+    int getNumberOfAccounts(Bank bank); // общее количество счетов
+    double getTotalAccountSum(Bank bank);
+    double getBankCreditSum(Bank bank); // возвращает сумму отрицательных балансов по всем счетам
+    List<Client> getClientsSortedByName(Bank bank);
+}
+```
