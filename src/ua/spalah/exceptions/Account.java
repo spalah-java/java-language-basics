@@ -10,7 +10,7 @@ public class Account {
         this.balance = balance;
     }
 
-    public void deposit(float amount) {
+    public void deposit(double amount) {
         if (amount < 0) {
             throw new IllegalArgumentException("Amount can't be negative.");
         }
@@ -18,7 +18,7 @@ public class Account {
     }
 
 
-    public void withdraw(float amount) throws NotEnoughFundsException {
+    public void withdraw(double amount) throws NotEnoughFundsException {
         if (amount < 0) throw new IllegalArgumentException("Amount can't be negative.");
 
         if (balance >= amount) {
@@ -26,5 +26,13 @@ public class Account {
         } else {
             throw new NotEnoughFundsException(id, balance);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", balance=" + balance +
+                '}';
     }
 }
