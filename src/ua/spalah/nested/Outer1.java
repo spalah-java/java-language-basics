@@ -19,7 +19,7 @@ public class Outer1 {
             for (int i = 0; i < someField; i++) {
                 System.out.println("doing something");
             }
-
         }
     }
+
 }
