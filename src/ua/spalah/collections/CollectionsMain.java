@@ -10,7 +10,7 @@ import java.util.TreeSet;
 
 import ua.spalah.oop.Worker;
 
-public class IterableMain {
+public class CollectionsMain {
 
     public static void main(String[] args) {
         List<String> strings = new ArrayList<>();
