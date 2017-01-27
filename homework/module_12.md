@@ -49,4 +49,4 @@ public interface BankReportService {
 - [`junit.jar`](http://bit.ly/My9IXz)
 - [`hamcrest-core.jar`](http://bit.ly/1gbl25b)
 
-Пробуем писать тесты для ClientService и AccountService
+Пробуем писать тесты для ClientService и AccountService.
