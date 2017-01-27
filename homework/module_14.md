@@ -25,7 +25,7 @@ accounts.txt
 
 #### Клиент-сервер
 
-Пишем реализацию клиент сервера на основе стримов и сокетов, по примеру из того, что я вам показывал на лекции [(пример)](https://github.com/spalah-java/java-language-basics/tree/master/src/ua/spalah/io/sockets).
+Пишем реализацию клиент сервера на основе стримов и сокетов, по примеру того, что я вам показывал на лекции [(пример)](https://github.com/spalah-java/java-language-basics/tree/master/src/ua/spalah/io/sockets).
 
 Создаем интерфейс
 
@@ -42,7 +42,7 @@ public interface IO {
 (можете сделать командам конструктор по умолчанию который использует ConsoleIO, также можете вынести общий функционал в AbstractCommand если видите такую необходимость)
 
 Пишем класс BankServerCommander в который будет ипользовать ServerSocket как в [примере](https://github.com/spalah-java/java-language-basics/blob/master/src/ua/spalah/io/sockets/Server.java) и создавать команды с SocketIO. Он по сути будет делать то же, что и BankCommander.
-И конечно пишем клиент для него BankClient, Который будет связывать через сокет с сервером, будет читать то, что вводит клиент, слать это на сервер, получать ответ и выводить его клиенту [(пример)](https://github.com/spalah-java/java-language-basics/blob/master/src/ua/spalah/io/sockets/Client.java).
+И конечно пишем клиент - BankClient. Он будет связывать с сервером через сокет, читать то, что вводит клиент, слать это на сервер, получать ответ и выводить его клиенту [(пример)](https://github.com/spalah-java/java-language-basics/blob/master/src/ua/spalah/io/sockets/Client.java).
 
 
 
