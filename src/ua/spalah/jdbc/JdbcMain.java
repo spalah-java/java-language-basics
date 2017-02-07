@@ -85,9 +85,6 @@ public class JdbcMain {
     }
 
     private static void updatePrepared(Connection connection, String login, String pass) throws SQLException {
-//        Statement statement = connection.createStatement();
-//        ResultSet resultSet = statement.executeQuery("SELECT nick, breed FROM dogs WHERE breed = '" + breedToFind + "'");
-
         PreparedStatement preparedStatement = connection.prepareStatement("insert into public.logins (login, PASSWORD ) VALUES (?, ?)");
         preparedStatement.setString(1, login);
         preparedStatement.setString(2, pass);
