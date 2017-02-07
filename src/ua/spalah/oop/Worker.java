@@ -20,6 +20,10 @@ public class Worker {
         this(name, birthDay, DEFAULT_SALARY);
     }
 
+    public Worker(String name) {
+        this(name, LocalDate.now());
+    }
+
     public Worker(String name, LocalDate birthDay, int salary) {
         this.name = name;
         this.birthDay = birthDay;

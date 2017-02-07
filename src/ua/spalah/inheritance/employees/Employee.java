@@ -8,9 +8,18 @@ import java.time.LocalDate;
 
 public class Employee implements Comparable<Employee>, LivingCreature, Hellowable {
 
-    private String name;
+    private String name = "some name";
     private double salary;
     private LocalDate birthDay;
+
+    {
+        name = "default";
+        name = getString();
+    }
+
+    private String getString() {
+        return "some default name";
+    }
 
     public Employee(String name, double salary, LocalDate birthDay) {
         this.name = name;
