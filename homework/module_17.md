@@ -8,11 +8,14 @@
  
 На данный момент у вас долна быть база примерно такого вида:
 
+#####CLIENTS
 
- First Header  | Second Header
- ------------- | -------------
- Content Cell  | Content Cell 
- Content Cell  | Content Cell 
+ ID  | NAME | GENDER | EMAIL | TELEPHONE | CITY | ACTIVE_ACCOUNT_ID
+ --- | ---- | ------ | ----- | --------- | ---- | -----------------
+ 1 | John Doe | MALE | jd@gmail.com | +555 1235321 | New York | 2
+ 2 | Lisa Jones | FEMALE | lisa@mail.ru | +777 8546842 | Boston | 9
+ ... | ... | ... | ... | ... | ... | ...
+
 
 
 В нашем приложении нам нужно реализовать 2 класса для DAO - ClientDao и AccountDao. 
