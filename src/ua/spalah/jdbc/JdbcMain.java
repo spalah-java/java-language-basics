@@ -55,7 +55,7 @@ public class JdbcMain {
     }
 
     private static <T> T mapModel(ResultSet resultSet, Class<T> classToMap) throws Exception {
-        T t = classToMap.newInstance();
+        T model = classToMap.newInstance();
 
         for (Field field : classToMap.getDeclaredFields()) {
 
@@ -69,15 +69,15 @@ public class JdbcMain {
             field.setAccessible(true);
 
             if (long.class.isAssignableFrom(type)) {
-                field.setLong(t, resultSet.getLong(name));
+                field.setLong(model, resultSet.getLong(name));
             } else if (double.class.isAssignableFrom(type)) {
-                field.setDouble(t, resultSet.getDouble(name));
+                field.setDouble(model, resultSet.getDouble(name));
             } else if (String.class.isAssignableFrom(type)) {
-                field.set(t, resultSet.getString(name));
+                field.set(model, resultSet.getString(name));
             }
         }
 
-        return t;
+        return model;
     }
 
     private static void update(Connection connection) throws SQLException {
