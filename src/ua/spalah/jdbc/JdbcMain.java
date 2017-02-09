@@ -23,10 +23,9 @@ public class JdbcMain {
 
         Dog dog = findDogById(connection, 3);
         System.out.println(dog);
+}
 
-    }
-
-    private static Dog findDogById(Connection connection, long idToFind) throws SQLException{
+    private static Dog findDogById(Connection connection, long idToFind) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM dogs WHERE id = ?");
         preparedStatement.setLong(1, idToFind);
 
