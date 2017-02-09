@@ -85,7 +85,7 @@ public class JdbcMain {
     }
 
     private static void updatePrepared(Connection connection, String login, String pass) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("insert into public.logins (login, PASSWORD ) VALUES (?, ?)");
+        PreparedStatement preparedStatement = connection.prepareStatement("insert into public.logins (login, PASSWORD) VALUES (?, ?)");
         preparedStatement.setString(1, login);
         preparedStatement.setString(2, pass);
 
