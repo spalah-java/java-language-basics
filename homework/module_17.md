@@ -83,4 +83,4 @@ public interface AccountServiceImpl {
 
 Если нужны параметризированные запросы (SELECT, UPDATE, INSERT и т.д.) используйте PreparedStatement.
 
-Пример как выполнять селекты с вы можете найти [в наших примерах из класса](https://github.com/spalah-java/java-language-basics/blob/master/src/ua/spalah/jdbc/JdbcMain.java#L29).
+Пример как выполнять селекты с вы можете найти [в наших примерах из класса](https://github.com/spalah-java/java-language-basics/blob/master/src/ua/spalah/jdbc/JdbcMain.java#L31).

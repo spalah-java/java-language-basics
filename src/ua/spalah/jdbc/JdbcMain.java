@@ -1,5 +1,8 @@
 package ua.spalah.jdbc;
 
+import ua.spalah.reflection.DbColumn;
+
+import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -23,7 +26,7 @@ public class JdbcMain {
 
         Dog dog = findDogById(connection, 3);
         System.out.println(dog);
-}
+    }
 
     private static Dog findDogById(Connection connection, long idToFind) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM dogs WHERE id = ?");
@@ -31,16 +34,50 @@ public class JdbcMain {
 
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
-            long id = resultSet.getInt("id");
+            long id = resultSet.getLong("id");
             String nick = resultSet.getString("nick");
             String breed = resultSet.getString("breed");
             Gender gender = Gender.valueOf(resultSet.getString("gender"));
             double weight = resultSet.getDouble("weight");
 
-            return new Dog(id, nick, breed, gender, weight);
+            Dog dog = new Dog();
+            dog.setId(id);
+            dog.setNick(nick);
+            dog.setGender(gender);
+            dog.setBreed(breed);
+            dog.setWeight(weight);
+
+            return dog;
+//            return mapModel(resultSet, Dog.class);
         } else {
             return null;
         }
+    }
+
+    private static <T> T mapModel(ResultSet resultSet, Class<T> classToMap) throws Exception {
+        T t = classToMap.newInstance();
+
+        for (Field field : classToMap.getDeclaredFields()) {
+
+            String name = field.getName();
+            if (field.isAnnotationPresent(DbColumn.class)) {
+                DbColumn annotation = field.getAnnotation(DbColumn.class);
+                name = annotation.columnName();
+            }
+
+            Class<?> type = field.getType();
+            field.setAccessible(true);
+
+            if (long.class.isAssignableFrom(type)) {
+                field.setLong(t, resultSet.getLong(name));
+            } else if (double.class.isAssignableFrom(type)) {
+                field.setDouble(t, resultSet.getDouble(name));
+            } else if (String.class.isAssignableFrom(type)) {
+                field.set(t, resultSet.getString(name));
+            }
+        }
+
+        return t;
     }
 
     private static void update(Connection connection) throws SQLException {
