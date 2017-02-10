@@ -11,6 +11,7 @@
 
 ```java
 private static <T> T mapModel(ResultSet resultSet, Class<T> classToMap) throws Exception {
+
         T model = classToMap.newInstance();
 
         for (Field field : classToMap.getDeclaredFields()) {
@@ -25,11 +26,14 @@ private static <T> T mapModel(ResultSet resultSet, Class<T> classToMap) throws E
             field.setAccessible(true);
 
             if (long.class.isAssignableFrom(type)) {
-                field.setLong(model, resultSet.getLong(name));
+                long value = resultSet.getLong(name);
+                field.setLong(model, value);
             } else if (double.class.isAssignableFrom(type)) {
-                field.setDouble(model, resultSet.getDouble(name));
+                double value = resultSet.getDouble(name);
+                field.setDouble(model, value);
             } else if (String.class.isAssignableFrom(type)) {
-                field.set(model, resultSet.getString(name));
+                String value = resultSet.getString(name);
+                field.set(model, value);
             }
             // обработка других типов полей
         }
