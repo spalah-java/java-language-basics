@@ -47,13 +47,13 @@ public interface ClientDao {
 }
     
 public interface AccountDao {
-    Account save(Account Account);
-    Account update(Account Account);
-    Account saveOrUpdate(Account Account);
+    Account save(long clientId, Account Account);
+    Account update(long clientId, Account Account);
+    Account saveOrUpdate(long clientId, Account Account);
     void delete(long id);
     
     Account find(long id);
-    List<Client> findAll();
+    List<Account> findAll();
     List<Account> findByClientId(long clientId);
     Account findActiveAccountByClientName(String clientName);
     
