@@ -31,6 +31,20 @@ public class ReflectionMain {
         methods();
 
         creation();
+
+        annotation();
+    }
+
+    private static void annotation() throws Exception{
+        Class<?> c = Class.forName("ua.spalah.jdbc.Dog");
+
+        for (Field field : c.getDeclaredFields()) {
+            if (field.isAnnotationPresent(DbColumn.class)) {
+                DbColumn annotation = field.getAnnotation(DbColumn.class);
+
+                System.out.println("filed " + field.getName() + " " + annotation.columnName() + " " + annotation.columnSize());
+            }
+        }
     }
 
     private static void creation() throws Exception {
