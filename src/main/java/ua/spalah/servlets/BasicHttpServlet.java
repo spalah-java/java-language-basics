@@ -36,9 +36,8 @@ public class BasicHttpServlet extends HttpServlet {
         String userAgent = req.getHeader("User-Agent");
         System.out.println(userAgent);
 
-        writer.write("<span style='color:red'>");
-        writer.write(userAgent);
-        writer.write("</span></body></html>");
+        writer.write("<span style='color:red'>" + userAgent + "</span>");
+        writer.write("</body></html>");
 
 //        Enumeration<String> headerNames = req.getHeaderNames();
 //        while (headerNames.hasMoreElements()) {
