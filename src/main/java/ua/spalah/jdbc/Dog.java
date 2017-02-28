@@ -1,13 +1,17 @@
 package ua.spalah.jdbc;
 
 import ua.spalah.reflection.DbColumn;
+import ua.spalah.reflection.DbTable;
+
+@DbTable("barking_pet")
 public class Dog {
 
     private long id;
-    @DbColumn(columnName = "name")
+    @DbColumn(columnName = "first_name", columnSize = 15)
     private String nick;
     private String breed;
     private Gender gender;
+    @DbColumn(columnName = "вес")
     private double weight;
 
     public Dog() {
