@@ -12,6 +12,7 @@ public class BasicHttpServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter writer = resp.getWriter();
 
 //        resp.setHeader("Content-Type", "text/plain");
 //        writer.write("This is just plain text");
@@ -20,9 +21,7 @@ public class BasicHttpServlet extends HttpServlet {
 //        writer.write("<html><body>GET/POST response</body></html>");
 
         String name = req.getParameter("name");
-        PrintWriter writer = resp.getWriter();
         writer.write("<html><body>the name is <b>" + name + "</b></body></html>");
-
 
 //        Enumeration<String> headerNames = req.getHeaderNames();
 //        while (headerNames.hasMoreElements()) {
