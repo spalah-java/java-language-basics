@@ -42,7 +42,6 @@ public class BasicHttpServlet extends HttpServlet {
 //        Enumeration<String> headerNames = req.getHeaderNames();
 //        while (headerNames.hasMoreElements()) {
 //            System.out.println(headerNames.nextElement());
-//        }
 
 //        Cookie[] cookies = req.getCookies();
 //        for (Cookie cookie : cookies) {
