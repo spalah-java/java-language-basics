@@ -3,6 +3,15 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+    <filter>
+        <filter-name>nameFilter</filter-name>
+        <filter-class>ua.spalah.servlets.NameFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>nameFilter</filter-name>
+        <url-pattern>/some/*</url-pattern>
+    </filter-mapping>
 
     <servlet>
         <servlet-name>basicServlet</servlet-name>
@@ -11,6 +20,6 @@
 
     <servlet-mapping>
         <servlet-name>basicServlet</servlet-name>
-        <url-pattern>/some-url</url-pattern>
+        <url-pattern>/some/url</url-pattern>
     </servlet-mapping>
 </web-app>
