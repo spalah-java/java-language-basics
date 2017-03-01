@@ -13,13 +13,27 @@
         <url-pattern>/some/*</url-pattern>
     </filter-mapping>
 
+    <listener>
+        <listener-class>ua.spalah.jsp.servlets.ServletContextInitializer</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>basicServlet</servlet-name>
         <servlet-class>ua.spalah.servlets.BasicHttpServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>findClientServlet</servlet-name>
+        <servlet-class>ua.spalah.jsp.servlets.FindClientServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>basicServlet</servlet-name>
         <url-pattern>/some/url</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>findClientServlet</servlet-name>
+        <url-pattern>/client</url-pattern>
     </servlet-mapping>
 </web-app>
