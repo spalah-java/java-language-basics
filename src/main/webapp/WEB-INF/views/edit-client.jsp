@@ -22,8 +22,9 @@
             </div>
 
             <div class="form-group">
-                <label for="gender">Gender:</label>
-                <input id="gender" type="text" class="form-control" name="gender" value="${client.gender}">
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="FEMALE" ${client.gender == "FEMALE" ? "checked" : ""}/>Женский
+                <input type="radio" name="gender" value="MALE" ${client.gender == "MALE" ? "checked" : ""}/>Мужской
             </div>
 
             <div class="form-group">

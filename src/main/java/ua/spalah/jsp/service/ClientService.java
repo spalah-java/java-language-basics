@@ -11,7 +11,7 @@ public class ClientService {
     private List<Client> clients = new ArrayList<>();
 
     public Client saveClient(Client client) {
-        client.setId(clients.size());
+        client.setId(clients.size() + 1);
         clients.add(client);
         return client;
     }

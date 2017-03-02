@@ -25,6 +25,18 @@
         <url-pattern>/some/*</url-pattern>
     </filter-mapping>
 
+    <!-- JSP example (test) -->
+    <servlet>
+        <servlet-name>testServlet</servlet-name>
+        <servlet-class>ua.spalah.servlets.TestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>testServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+
     <!-- JSP example (clients) -->
     <listener>
         <listener-class>ua.spalah.jsp.servlets.ServletContextInitializer</listener-class>
