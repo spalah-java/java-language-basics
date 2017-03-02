@@ -18,10 +18,17 @@ public class FindClientServlet extends HttpServlet {
         ServletContext context = req.getSession().getServletContext();
         ClientService clientService = (ClientService) context.getAttribute("clientService");
 
-        long id = Long.parseLong(req.getParameter("id"));
-        Client client = clientService.findClientById(id);
+        String idParam = req.getParameter("id");
 
-        req.setAttribute("client", client);
-        req.getRequestDispatcher("WEB-INF/views/client.jsp").forward(req, resp);
+        if (idParam != null) {
+            long id = Long.parseLong(idParam);
+            Client client = clientService.findClientById(id);
+
+            req.setAttribute("client", client);
+            req.getRequestDispatcher("/WEB-INF/views/client.jsp").forward(req, resp);
+        } else {
+            req.setAttribute("clients", clientService.findAllClients());
+            req.getRequestDispatcher("/WEB-INF/views/all-clients.jsp").forward(req, resp);
+        }
     }
 }

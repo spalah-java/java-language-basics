@@ -23,8 +23,8 @@ public class ServletContextInitializer implements ServletContextListener {
 
     private void initClients(ClientService clientService) {
         clientService.saveClient(createClient("Homer", MALE, 1700.00));
-        clientService.saveClient(createClient("Marge", MALE, 2520.75));
-        clientService.saveClient(createClient("Bart", FEMALE, 220.75));
+        clientService.saveClient(createClient("Marge", FEMALE, 2520.75));
+        clientService.saveClient(createClient("Bart", MALE, 220.75));
         clientService.saveClient(createClient("Lisa", FEMALE, 320.75));
         clientService.saveClient(createClient("Maggie", FEMALE, 0.15));
         clientService.saveClient(createClient("Mr. Burns", MALE, 15000000.00));

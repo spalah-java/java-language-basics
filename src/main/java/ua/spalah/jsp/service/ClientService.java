@@ -16,7 +16,18 @@ public class ClientService {
         return client;
     }
 
-    public List<Client> getAllClients(){
+    public Client updateClient(Client updatedClient) {
+        long id = updatedClient.getId();
+        Client client = findClientById(id);
+
+        client.setName(updatedClient.getName());
+        client.setGender(updatedClient.getGender());
+        client.setBalance(updatedClient.getBalance());
+
+        return client;
+    }
+
+    public List<Client> findAllClients(){
         return clients;
     }
 
@@ -28,6 +39,4 @@ public class ClientService {
         }
         return null;
     }
-
-
 }
