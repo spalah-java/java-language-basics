@@ -12,6 +12,7 @@ import static ua.spalah.jdbc.Gender.FEMALE;
 import static ua.spalah.jdbc.Gender.MALE;
 
 public class ServletContextInitializer implements ServletContextListener {
+
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         ClientService clientService = new ClientService();
@@ -39,7 +40,5 @@ public class ServletContextInitializer implements ServletContextListener {
     }
 
     @Override
-    public void contextDestroyed(ServletContextEvent servletContextEvent) {
-
-    }
+    public void contextDestroyed(ServletContextEvent servletContextEvent) {}
 }
