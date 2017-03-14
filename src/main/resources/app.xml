@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="itemDao" class="ua.spalah.spring.di.xml.dao.impl.ItemDaoImpl"/>
+    <bean id="orderDao" class="ua.spalah.spring.di.xml.dao.impl.OrderDaoImpl"/>
+    <bean id="clientDao" class="ua.spalah.spring.di.xml.dao.impl.ClientDaoJdbc"/>
+    <!--<bean id="clientDao" class="ua.spalah.spring.di.xml.dao.impl.ClientDaoHibernate"/>-->
+
+    <bean id="itemService" class="ua.spalah.spring.di.xml.services.ItemService">
+        <constructor-arg ref="itemDao"/>
+    </bean>
+
+    <bean id="orderService" class="ua.spalah.spring.di.xml.services.OrderService">
+        <property name="orderDao" ref="orderDao"/>
+        <property name="itemService" ref="itemService"/>
+    </bean>
+
+    <bean id="clientService" class="ua.spalah.spring.di.xml.services.ClientService">
+        <constructor-arg ref="clientDao"/>
+        <constructor-arg ref="orderService"/>
+        <constructor-arg ref="itemService"/>
+    </bean>
+
+</beans>
