@@ -46,10 +46,10 @@ public class CatController {
 
     @RequestMapping(path = "/edit", method = RequestMethod.POST)
     public String edit(@ModelAttribute Cat cat) {
-        if (cat.getId() != null) {
-            cat = catService.update(cat);
-        } else {
+        if (cat.getId() == null) {
             cat = catService.save(cat);
+        } else {
+            cat = catService.update(cat);
         }
         return "redirect:/cat?id=" + cat.getId();
     }
