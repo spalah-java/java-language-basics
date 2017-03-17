@@ -21,7 +21,7 @@ public class EditClientServlet extends HttpServlet {
 
         String idParam = req.getParameter("id");
 
-        Client client = null;
+        Client client;
         if (idParam != null) {
             client = clientService.findClientById(Long.parseLong(idParam));
         } else {
