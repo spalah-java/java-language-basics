@@ -36,7 +36,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".jsp");
-        // From "Spring in action", don't know what fot yet
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
     }
