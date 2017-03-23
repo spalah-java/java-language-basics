@@ -1,6 +1,7 @@
 package ua.spalah.spring.all.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.bind.annotation.ResponseStatus;
 import ua.spalah.spring.all.models.Cat;
 import ua.spalah.spring.all.services.CatService;
 
@@ -60,9 +61,13 @@ public class CatController {
     }
 
     @RequestMapping(path = "/json", method = RequestMethod.POST)
-    public @ResponseBody Cat restSave(@RequestBody Cat cat) {
-        return cat.getId() != null ?
-                catService.update(cat) :
-                catService.save(cat);
+    public @ResponseBody Long restSave(@RequestBody Cat cat) {
+        return catService.save(cat).getId();
+    }
+
+    @RequestMapping(path = "/json", method = RequestMethod.PATCH)
+    @ResponseStatus(value = HttpStatus.OK)
+    public void restUpdate(@RequestBody Cat cat) {
+        catService.update(cat);
     }
 }
