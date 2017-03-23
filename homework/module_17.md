@@ -8,7 +8,7 @@
  
 На данный момент у вас долна быть база примерно такого вида:
 
-####CLIENTS
+**CLIENTS**
 
  ID  | NAME | GENDER | EMAIL | TELEPHONE | CITY | ACTIVE_ACCOUNT_ID
  --- | ---- | ------ | ----- | --------- | ---- | -----------------
@@ -16,7 +16,7 @@
  2 | Lisa Jones | FEMALE | lisa@mail.ru | +777 8546842 | Boston | 9
  ... | ... | ... | ... | ... | ... | ...
 
-####ACCOUNTS
+**ACCOUNTS**
 
  ID  | CLIENT_ID | TYPE | BALANCE | OVERDRAFT
  --- | --------- | ---- | ------- | ---------
