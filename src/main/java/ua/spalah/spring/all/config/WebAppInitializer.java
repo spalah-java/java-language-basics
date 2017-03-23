@@ -2,7 +2,8 @@ package ua.spalah.spring.all.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class WebAppInitializer
+        extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected String[] getServletMappings() {
