@@ -19,7 +19,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("/static/**").setCachePeriod(3600);
+        registry.addResourceHandler("/**").addResourceLocations("/static/").setCachePeriod(3600);
     }
 
     // Asking DispatcherServlet to forward requests
